@@ -4,6 +4,7 @@ import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/cupertino.dart';
 import '../widgets/CusTomAppBar.dart';
 import 'LandingPage.dart';
+import './searchScreen.dart';
 
 class MainHome extends StatefulWidget {
   @override
@@ -22,9 +23,11 @@ class _MainHomeState extends State<MainHome> with TickerProviderStateMixin {
   }
 
   Widget current_page(position) {
-
+    if (position == 0){
+      return LandingPage();
+    }
     return Center(
-      child: LandingPage()
+      child: SearchPanel()
     );
   }
 

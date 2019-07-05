@@ -17,7 +17,7 @@ class PopularItem extends StatelessWidget{
           child: new Container(
             alignment: Alignment.bottomRight,
             height: MediaQuery.of(context).size.width * 0.5,
-            width: MediaQuery.of(context).size.width * 0.42,
+            width: MediaQuery.of(context).size.width * 0.43,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
               image: DecorationImage(
@@ -57,7 +57,8 @@ class PopularItem extends StatelessWidget{
                 item['type'],
                 style: style.subcardTitleStyle,
                 softWrap: true,
-                overflow: TextOverflow.fade,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
               )
             ],
           ),
@@ -78,7 +79,7 @@ class PopularItem extends StatelessWidget{
               style: style.subHeaderStyle,
             )
           ],
-        )
+        ),
       ],
     );;
   }

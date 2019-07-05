@@ -41,11 +41,14 @@ class PopularItems extends StatelessWidget {
                 (MediaQuery.of(context).size.height - kToolbarHeight - 24) / 2;
             final double itemWidth = MediaQuery.of(context).size.width / 1.7;
             return GridView.builder(
+              padding: EdgeInsets.only(bottom:32),
               physics: ScrollPhysics(),
               shrinkWrap: true,
               gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 1 / 1.45,
+                crossAxisSpacing: 12,
+                mainAxisSpacing: 8
               ),
               itemCount: model.categories.length,
               itemBuilder: (context, index) {

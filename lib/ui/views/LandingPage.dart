@@ -13,8 +13,9 @@ class LandingPage extends StatelessWidget {
     return ChangeNotifierProvider<FoodList>(
       builder: (context) => locator<FoodList>(),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12),
+        padding: EdgeInsets.symmetric(horizontal: 12 ),
         child: ListView(
+
           children: <Widget>[
             TopMenuList(),
             DishCategories(),

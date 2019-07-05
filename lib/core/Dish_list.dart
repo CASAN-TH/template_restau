@@ -163,7 +163,6 @@ class FoodList extends ChangeNotifier {
     categories.forEach((categorie)  {
       if(categorie['id'] == id){
         categorie['liked'] = !categorie['liked'];
-        print(categorie);
       }
     }  ) ;
     notifyListeners() ;

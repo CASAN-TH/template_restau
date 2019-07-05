@@ -48,6 +48,15 @@ flutter:
     - family: CustomSocial
       fonts:
         - asset: assets/CustomSocial.ttf
+    - family: Timesroman
+      fonts:
+        - asset: assets/serif-regular.ttf
+        - asset: assets/serifbold.ttf
+          weight: 700
+
+    - family: Quicksand
+      fonts:
+        - asset: assets/Quicksand-Regular.ttf
   assets:
     - assets/
     - assets/home_background.jpeg
@@ -66,6 +75,7 @@ flutter:
     - assets/food12.jpg
     - assets/food13.jpg
     - assets/food14.jpg
+    - assets/profil.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
