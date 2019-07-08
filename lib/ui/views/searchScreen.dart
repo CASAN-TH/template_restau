@@ -27,7 +27,7 @@ class _SearchPanelState extends State<SearchPanel> {
                 Column(
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.fromLTRB(15.0, 35.0, 15.0, 10.0),
+                      padding: EdgeInsets.fromLTRB(15.0, 25.0, 15.0, 10.0),
                       child: Material(
                         elevation: 10.0,
                         borderRadius: BorderRadius.circular(25.0),

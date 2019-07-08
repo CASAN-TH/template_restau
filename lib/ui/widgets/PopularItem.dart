@@ -81,6 +81,6 @@ class PopularItem extends StatelessWidget{
           ],
         ),
       ],
-    );;
+    );
   }
 }

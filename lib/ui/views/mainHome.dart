@@ -44,8 +44,8 @@ class _MainHomeState extends State<MainHome> with TickerProviderStateMixin {
         tabs: [
           TabData(iconData: Icons.home, title: "Home"),
           TabData(iconData: Icons.search, title: "Search"),
-          TabData(iconData: Icons.shopping_cart, title: "Basket"),
-          TabData(iconData: Icons.person, title: "Home"),
+          TabData(iconData: Icons.favorite, title: "Favorite"),
+          TabData(iconData: Icons.person, title: "Profile"),
         ],
         onTabChangedListener: (position) {
           setState(() {

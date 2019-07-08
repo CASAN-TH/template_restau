@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+class TitleAppBar extends StatelessWidget with PreferredSizeWidget {
+  final String title;
 
-class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   Size size;
+
+  TitleAppBar({@required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -15,24 +18,19 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/shoppingCart');
-                  },
-                  child: Icon(Icons.shopping_cart, size: 32)),
-              Expanded(
-                child: Text(
-                  "Restaurant App ui",
-                  style: Theme.of(context).appBarTheme.textTheme.title,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              GestureDetector(
                 onTap: (){
-                  Navigator.pushNamed(context, '/notification') ;
+                  Navigator.pop(context) ;
                 },
                 child: Icon(
-                  Icons.notifications_none,
+                  Icons.arrow_back,
                   size: 32,
+                ),
+              ),
+              Expanded(
+                child: Text(
+                  this.title,
+                  style: Theme.of(context).appBarTheme.textTheme.title,
+                  textAlign: TextAlign.center,
                 ),
               ),
             ],

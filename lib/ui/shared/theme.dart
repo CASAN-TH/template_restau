@@ -14,9 +14,10 @@ class ThemeChanger with ChangeNotifier {
       brightness: Brightness.dark,
       primaryColor: Color(0xFFBB86FC),
       hintColor: Colors.white.withOpacity(0.7),
-      accentColor: darkAccent,
+      accentColor: Color(0xFFBB86FC),
       scaffoldBackgroundColor: darkBG,
       cursorColor: darkAccent,
+
       appBarTheme: AppBarTheme(
         textTheme: TextTheme(
           title: TextStyle(
@@ -30,7 +31,7 @@ class ThemeChanger with ChangeNotifier {
       backgroundColor: lightBG,
       brightness: Brightness.light,
       primaryColor: Colors.redAccent,
-      accentColor: lightAccent,
+      accentColor: Colors.redAccent,
       cursorColor: lightAccent,
       scaffoldBackgroundColor: lightBG,
       hintColor: Colors.grey,

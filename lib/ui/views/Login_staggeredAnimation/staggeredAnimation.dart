@@ -3,7 +3,7 @@ import 'dart:async';
 import './FadeContainer.dart';
 
 class StaggerAnimation extends StatelessWidget {
-  StaggerAnimation({Key key, this.buttonController})
+  StaggerAnimation({Key key, this.buttonController,this.screenSize})
       : buttonSqueezeanimation = new Tween(
           begin: 320.0,
           end: 70.0,
@@ -30,8 +30,8 @@ class StaggerAnimation extends StatelessWidget {
           ),
         ),
         containerCircleAnimation = EdgeInsetsTween(
-          begin: const EdgeInsets.only(bottom: 0),
-          end: const EdgeInsets.only(bottom: 0.0),
+          begin:  EdgeInsets.only(top: screenSize.height - 200),
+          end:  const EdgeInsets.only(top: 0.0),
         ).animate(
           CurvedAnimation(
             parent: buttonController,
@@ -43,7 +43,7 @@ class StaggerAnimation extends StatelessWidget {
           ),
         ),
         super(key: key);
-
+  final Size screenSize ;
   final AnimationController buttonController;
   final Animation<EdgeInsets> containerCircleAnimation;
   final Animation buttonSqueezeanimation;
@@ -59,7 +59,7 @@ class StaggerAnimation extends StatelessWidget {
   Widget _buildAnimation(BuildContext context, Widget child) {
     return Padding(
       padding: buttomZoomOut.value == 70
-          ? EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.63)
+          ? EdgeInsets.only(top: MediaQuery.of(context).size.height *0.95 - 200)
           : containerCircleAnimation.value,
       child: InkWell(
           onTap: () {

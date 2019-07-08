@@ -9,7 +9,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food1.jpeg",
       "cuisine": "Italien",
       "rating" : 5.0,
-      "liked" : true
+      "liked" : true,
+      "price" : 248
     },
     {
       "id": "2",
@@ -17,7 +18,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food2.jpg",
       "cuisine": "Italien",
       "rating" : 5.0,
-      "liked" : false
+      "liked" : false,
+      "price" : 48
 
 
     },
@@ -27,7 +29,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food3.jpg",
       "cuisine": "Chinese",
       "rating" : 3.5,
-      "liked": true
+      "liked": true,
+      "price" : 485
 
     },
     {
@@ -36,7 +39,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food4.jpg",
       "cuisine": "Chinese",
     "rating" : 4.5,
-      "liked" : false
+      "liked" : false,
+      "price" : 481
 
     },
     {
@@ -45,7 +49,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food5.jpg",
       "cuisine": "Chinese",
     "rating" : 2.5,
-      "liked" : true
+      "liked" : true,
+      "price" : 482
 
     },
     {
@@ -54,7 +59,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food6.jpg",
       "cuisine": "Korean",
       "rating" : 5.0,
-      "liked" : true
+      "liked" : true,
+      "price" : 483
 
     },
     {
@@ -63,7 +69,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food7.jpg",
       "cuisine": "Korean",
       "rating" : 5.0,
-      "liked" : true
+      "liked" : true,
+      "price" : 4
 
     },
     {
@@ -72,7 +79,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food8.jpg",
       "cuisine": "Korean",
       "rating" : 5.0,
-      "liked" : true
+      "liked" : true,
+      "price" : 488
 
     },
     {
@@ -81,7 +89,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food9.jpg",
       "cuisine": "Mexican",
       "rating" : 5.0,
-      "liked" : true
+      "liked" : true,
+      "price" : 999
 
     },
     {
@@ -90,7 +99,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food10.jpg",
       "cuisine": "Mexican",
       "rating" : 5.0,
-      "liked" : true
+      "liked" : true,
+      "price" : 78
 
     },
     {
@@ -99,7 +109,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food11.jpg",
       "cuisine": "Mexican",
       "rating" : 5.0,
-      "liked" : true
+      "liked" : true,
+      "price" : 55
 
     },
     {
@@ -108,7 +119,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food12.jpg",
       "cuisine": "Americain",
       "rating" : 5.0,
-      "liked" : true
+      "liked" : true,
+      "price" : 16
 
     },
     {
@@ -117,7 +129,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food13.jpg",
       "cuisine": "Americain",
       "rating" : 5.0,
-      "liked" : true
+      "liked" : true,
+      "price" : 48
 
     },
     {
@@ -126,7 +139,8 @@ class FoodList extends ChangeNotifier {
       "img": "assets/food14.jpg",
       "cuisine": "Americain",
       "rating" : 5.0,
-      "liked" : true
+      "liked" : true,
+      "price" : 666
 
     },
   ];

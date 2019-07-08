@@ -46,7 +46,7 @@ class PopularItems extends StatelessWidget {
               shrinkWrap: true,
               gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1 / 1.45,
+                childAspectRatio: 1 / 1.5,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 8
               ),

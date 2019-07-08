@@ -197,20 +197,9 @@ class _LoginScreenState extends State<LoginScreen>
                   ),
                 ],
               ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                margin:
-                    const EdgeInsets.only(left: 30.0, right: 30.0, top: 40.0),
-                alignment: Alignment.center,
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 20.0,
-                        horizontal: 20.0,
-                      ),
-                    ),
-                  ],
+              Expanded(
+                child: Container(
+                  
                 ),
               ),
               Column(
@@ -366,16 +355,17 @@ class _LoginScreenState extends State<LoginScreen>
                         ),
                       ],
                     ),
-                  )
+                  ),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.05,)
                 ],
               ),
             ],
           ),
           animationStatus == 0
               ? Container(
-            padding: EdgeInsets.only(top: MediaQuery.of(context).size.height *0.63),
+            padding: EdgeInsets.only(top: MediaQuery.of(context).size.height *0.95 - 180),
                   width: MediaQuery.of(context).size.width,
-                  margin: const EdgeInsets.only(left: 30.0, right: 30.0, top: 20.0),
+                  margin: const EdgeInsets.only(left: 30.0, right: 30.0 ),
                   //alignment: Alignment.center,
                   child: Row(
                     children: <Widget>[
@@ -415,7 +405,7 @@ class _LoginScreenState extends State<LoginScreen>
                     ],
                   ),
                 )
-              : StaggerAnimation(buttonController: _loginButtonController.view)
+              : StaggerAnimation(buttonController: _loginButtonController.view,screenSize: MediaQuery.of(context).size,)
         ],
       ),
     );
