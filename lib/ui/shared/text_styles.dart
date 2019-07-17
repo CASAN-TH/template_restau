@@ -13,3 +13,9 @@ const subHintTitle = TextStyle(
     color: Colors.grey,
     fontSize: 14.0
 );
+
+const arialTheme = TextStyle(
+    color: Colors.white,
+    fontSize: 18,
+    letterSpacing: 1.4,
+    fontFamily: "arial");
