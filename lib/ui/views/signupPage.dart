@@ -231,7 +231,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                     color: Theme.of(context).primaryColor,
-                    onPressed: () {theme.toggleTheme();}
+                    onPressed: () {}
                     ,
                     child: Container(
                       padding: const EdgeInsets.symmetric(

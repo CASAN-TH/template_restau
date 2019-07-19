@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import '../widgets/CusTomAppBar.dart';
 import 'LandingPage.dart';
 import './searchScreen.dart';
+import './ProfilePage.dart';
 
 class MainHome extends StatefulWidget {
   @override
@@ -25,6 +26,9 @@ class _MainHomeState extends State<MainHome> with TickerProviderStateMixin {
   Widget current_page(position) {
     if (position == 0){
       return LandingPage();
+    }
+    if(position == 3 ){
+      return ProfilePage() ;
     }
     return Center(
       child: SearchPanel()

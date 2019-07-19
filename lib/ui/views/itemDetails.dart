@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:smooth_star_rating/smooth_star_rating.dart';
 import '../shared/text_styles.dart' as style;
 
 final stateBloc = StateBloc();
@@ -164,7 +165,11 @@ class DishDetails extends StatelessWidget {
                   )),
               Container(
                 margin: EdgeInsets.only(right: 25),
-                child: Icon(
+                child: dish['liked'] ?   Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                  size: 42,
+                ):Icon(
                   Icons.favorite_border,
                   color: Colors.white,
                   size: 42,
@@ -256,7 +261,7 @@ class _CarCarouselState extends State<CarCarousel> {
       return Container(
           decoration: BoxDecoration(),
           child: Hero(
-            tag: assetName,
+            tag: widget.dish['id'],
             child: Image.asset(
               assetName,
               fit: BoxFit.cover,
@@ -380,13 +385,17 @@ class _CustomBottomSheetState extends State<CustomBottomSheet>
             return;
           }
         },
-        child: SheetContainer(),
+        child: SheetContainer(dish: widget.dish),
       ),
     );
   }
 }
 
 class SheetContainer extends StatelessWidget {
+  final Map<String, dynamic> dish;
+
+  SheetContainer({this.dish});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -402,11 +411,155 @@ class SheetContainer extends StatelessWidget {
           Expanded(
             flex: 1,
             child: ListView(
+              padding: EdgeInsets.only(left: 15),
               children: <Widget>[
-                SizedBox(height: 220),
+                Row(
+                  children: <Widget>[
+                    Text(
+                      dish['type'],
+                      style: style.headerStyle2,
+                    ),
+                    Text(
+                      '  ${dish['cuisine']}',
+                      style: style.subHintTitle,
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Row(
+                  children: <Widget>[
+                    SmoothStarRating(
+                        allowHalfRating: false,
+                        starCount: 5,
+                        rating: dish['rating'],
+                        size: 20.0,
+                        color: Color(0xFFFEBF00),
+                        borderColor: Color(0xFFFEBF00),
+                        spacing: 0.0),
+                    Text(
+                      '  (${dish['rating']})',
+                      style: style.subHintTitle,
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.005,
+                ),
+                Row(
+                  children: <Widget>[
+                    Text(
+                      '20 Pieces     ',
+                      style: style.cardTitleStyle,
+                    ),
+                    Text(
+                      '${dish['price']} \$',
+                      style: style.headerStyle3
+                          .copyWith(color: Theme.of(context).primaryColor),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.1,
+                ),
+                Text(
+                  'Product Description',
+                  style: style.headerStyle2,
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  'Pyongyang Matsutake and Spinach Sauce alongside Natural Shitaki Juice,Psychotropic Cheese in a mélange of Pan-fried Veal Pizza Craft Tuna and Black Truffle Blobs atop Home-grown Spam Cake Tepid Frankfurter with a side of Housemade Sea Urchin and Truffle Oil Confit Tepid Frankfurter with a side of Housemade Sea Urchin and Truffle Oil Confit',
+                  style: style.textTheme,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+                Text(
+                  'Reviews',
+                  style: style.headerStyle2,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                ListView(
+                  padding: EdgeInsets.symmetric(horizontal: 12),
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  children: <Widget>[
+                    drawReviewTile(context, 'Joe Hattab', 'assets/profil.jpg'),
+                    drawReviewTile(context, 'Sophie', 'assets/profile2.jpg'),
+                    drawReviewTile(
+                        context, 'Lionel Messi', 'assets/profile3.jpg'),
+                    drawReviewTile(context, 'Pewdiepie', 'assets/profil4.jpg'),
+                  ],
+                )
               ],
             ),
           )
+        ],
+      ),
+    );
+  }
+
+  drawReviewTile(context, name, asset) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 15),
+      child: Row(
+        children: <Widget>[
+          Container(
+            height: MediaQuery.of(context).size.height * 0.1,
+            width: MediaQuery.of(context).size.height * 0.1,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(image: AssetImage(asset))),
+          ),
+          SizedBox(
+            width: 15,
+          ),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                Text(
+                  name,
+                  style: style.headerStyle3,
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Row(
+                  children: <Widget>[
+                    SmoothStarRating(
+                        allowHalfRating: false,
+                        starCount: 5,
+                        rating: 5,
+                        size: 20.0,
+                        color: Color(0xFFFEBF00),
+                        borderColor: Color(0xFFFEBF00),
+                        spacing: 0.0),
+                    Text(
+                      ' June 7, 2020',
+                      style: style.subHintTitle,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'This is the best food you can ever try Delicious and Have a nice plating and the service and delivery was really quickly',
+                  softWrap: true,
+                  maxLines: 3,
+                  style: style.textTheme.copyWith(fontSize: 14),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );

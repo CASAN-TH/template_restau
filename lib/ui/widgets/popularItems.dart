@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../shared/text_styles.dart' as style;
 import 'package:provider/provider.dart';
 import '../../core/Dish_list.dart';
-import 'package:smooth_star_rating/smooth_star_rating.dart' ;
 import './PopularItem.dart' ;
 
 class PopularItems extends StatelessWidget {

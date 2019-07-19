@@ -5,6 +5,8 @@ import './views/loginScreen.dart';
 import './views/HomePage.dart';
 import './views/mainHome.dart';
 import './views/shoppingCart.dart';
+import './views/splashScreen.dart';
+import './views/ProfilePage.dart';
 
 
 
@@ -15,6 +17,10 @@ class Router {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => HomePage());
+      case '/splashScreen':
+        return MaterialPageRoute(builder: (_) => SplashScreen());
+      case '/profilePage':
+        return MaterialPageRoute(builder: (_) => ProfilePage());
       case '/mainHome':
         return MaterialPageRoute(builder: (_)=> MainHome());
       case '/notification':

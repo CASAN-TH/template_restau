@@ -19,3 +19,9 @@ const arialTheme = TextStyle(
     fontSize: 18,
     letterSpacing: 1.4,
     fontFamily: "arial");
+
+
+const textTheme = TextStyle(
+    fontSize: 16,
+    letterSpacing: 1.1,
+    fontFamily: "arial");

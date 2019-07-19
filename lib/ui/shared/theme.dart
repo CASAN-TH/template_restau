@@ -57,6 +57,14 @@ class ThemeChanger with ChangeNotifier {
       this._themeData = themeLight;
     notifyListeners();
   }
+  toggleToDark(){
+    this._themeData = themeDark;
+    notifyListeners();
+  }
+  toggleToLight(){
+    this._themeData = themeLight;
+    notifyListeners();
+  }
 
   getTheme() => _themeData;
 

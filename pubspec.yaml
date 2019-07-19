@@ -78,6 +78,11 @@ flutter:
     - assets/food13.jpg
     - assets/food14.jpg
     - assets/profil.jpg
+    - assets/profile2.jpg
+    - assets/profile3.jpg
+    - assets/profil4.jpg
+    - assets/sun.png
+    - assets/moon.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -32,7 +32,7 @@ class _MaterialAppWithThemeState extends State<MaterialAppWithTheme> {
     final theme = Provider.of<ThemeChanger>(context);
     return MaterialApp(
       onGenerateRoute: Router.generateRoute,
-      initialRoute: '/',
+      initialRoute: '/splashScreen',
       theme: theme.getTheme(),
       title: 'Restaurant Template',
     );
