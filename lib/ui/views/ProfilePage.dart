@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:provider/provider.dart';
 import 'package:template_restau/ui/shared/theme.dart';
 import '../shared/text_styles.dart' as style;
+import 'package:flare_flutter/flare_actor.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -33,15 +34,15 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: Column(
                       children: <Widget>[
                         Container(
-                          height: MediaQuery.of(context).size.height *0.45,
-                            color: Colors.transparent,
-                            child: ClipPath(
-                              clipper: BackClipper(),
-                              child: Container(
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),),
-
+                          height: MediaQuery.of(context).size.height * 0.45,
+                          color: Colors.transparent,
+                          child: ClipPath(
+                            clipper: BackClipper(),
+                            child: Container(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -71,18 +72,20 @@ class _ProfilePageState extends State<ProfilePage> {
                           height: 5.0,
                         ),
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 35.0),
+                          padding: EdgeInsets.symmetric(horizontal: 15.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: <Widget>[
-                              Container(
-                                width: 45.0,
-                                height: 45.0,
-                                child: InkWell(
-                                    onTap: () {
-                                      theme.toggleToDark();
-                                    },
-                                    child: Image.asset('assets/moon.png')),
+                              GestureDetector(
+                                onTap: (){
+                                  theme.toggleTheme() ;
+                                },
+                                child: Container(
+                                    width: 90.0,
+                                    height: 45.0,
+                                    child: FlareActor("assets/switcher.flr",
+                                        alignment: Alignment.center,
+                                        animation: theme.getSwitcherAnim().toString().substring(14))),
                               ),
                               Container(
                                 child: Column(
@@ -110,14 +113,16 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ],
                                 ),
                               ),
-                              Container(
-                                width: 45.0,
-                                height: 45.0,
-                                child: InkWell(
-                                  child: Image.asset('assets/sun.png'),
-                                  onTap: () {
-                                    theme.toggleToLight();
-                                  },
+                              InkWell(
+                                onTap: (){
+                                  Navigator.pushReplacementNamed(context, '/splashScreen') ;
+                                },
+                                child: Container(
+                                  width: 90.0,
+                                  height: 45.0,
+                                  child: Center(
+                                    child: Icon(Icons.power_settings_new,size: 35,),
+                                  ),
                                 ),
                               ),
                             ],

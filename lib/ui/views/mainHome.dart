@@ -6,6 +6,7 @@ import '../widgets/CusTomAppBar.dart';
 import 'LandingPage.dart';
 import './searchScreen.dart';
 import './ProfilePage.dart';
+import 'favoritePage.dart';
 
 class MainHome extends StatefulWidget {
   @override
@@ -27,12 +28,17 @@ class _MainHomeState extends State<MainHome> with TickerProviderStateMixin {
     if (position == 0){
       return LandingPage();
     }
+    if( position == 1) {
+      return Center(
+          child: SearchPanel()
+      );
+    }
+    if (position == 2){
+      return FavoriteList() ;
+    }
     if(position == 3 ){
       return ProfilePage() ;
     }
-    return Center(
-      child: SearchPanel()
-    );
   }
 
   @override

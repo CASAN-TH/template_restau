@@ -24,6 +24,10 @@ dependencies:
   fancy_bottom_navigation: ^0.3.2
   smooth_star_rating: ^1.0.3
   carousel_slider: ^1.3.0
+  flare_flutter: ^1.5.5
+
+
+
 
 
 
@@ -34,6 +38,11 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.7.2"
+flutter_icons:
+  image_path: "assets/icons&splashs/Asset 41.png"
+  android: true
+  ios: true
 
 
 # For information on the generic Dart part of this file, see the
@@ -83,6 +92,22 @@ flutter:
     - assets/profil4.jpg
     - assets/sun.png
     - assets/moon.png
+    - assets/switcher.flr
+    - assets/Walkthrough/Best_Chef_day.png
+    - assets/Walkthrough/Best_Chef_night.png
+    - assets/Walkthrough/Perfect_Price_day.png
+    - assets/Walkthrough/Perfect_Price_night.png
+    - assets/Walkthrough/Perfect_Taste_day.png
+    - assets/Walkthrough/Perfect_Taste_night.png
+    - assets/Walkthrough/Relaxed_Atmosphere_day.png
+    - assets/Walkthrough/Relaxed_Atmosphere_night.png
+    - assets/Walkthrough/transparent.png
+    - assets/icons&splashs/splash_day.png
+    - assets/icons&splashs/splash_night.png
+    - assets/icons&splashs/Asset 61.png
+    - assets/icons&splashs/Asset 51.png
+    - assets/icons&splashs/Asset 41.png
+    - assets/icons&splashs/Asset 31.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
