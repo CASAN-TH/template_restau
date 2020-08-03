@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+
+enum switcherState { day_idle, night_idle ,switch_night,switch_day}
 
 class ThemeChanger with ChangeNotifier {
   static Color lightPrimary = Color(0xfffcfcff);
@@ -9,14 +12,14 @@ class ThemeChanger with ChangeNotifier {
   static Color darkBG = Colors.black;
   static Color ratingBG = Colors.yellow[600];
   final ThemeData themeDark = ThemeData(
-
       backgroundColor: darkBG,
       brightness: Brightness.dark,
       primaryColor: Color(0xFFBB86FC),
       hintColor: Colors.white.withOpacity(0.7),
-      accentColor: darkAccent,
+      accentColor: Color(0xFFBB86FC),
       scaffoldBackgroundColor: darkBG,
       cursorColor: darkAccent,
+      textSelectionColor: Colors.white,
       appBarTheme: AppBarTheme(
         textTheme: TextTheme(
           title: TextStyle(
@@ -30,9 +33,10 @@ class ThemeChanger with ChangeNotifier {
       backgroundColor: lightBG,
       brightness: Brightness.light,
       primaryColor: Colors.redAccent,
-      accentColor: lightAccent,
+      accentColor: Colors.redAccent,
       cursorColor: lightAccent,
       scaffoldBackgroundColor: lightBG,
+      textSelectionColor: Colors.black,
       hintColor: Colors.grey,
       appBarTheme: AppBarTheme(
         textTheme: TextTheme(
@@ -44,23 +48,29 @@ class ThemeChanger with ChangeNotifier {
         ),
       ));
   ThemeData _themeData;
-
-  ThemeChanger() {
+  switcherState switcherAnim = switcherState.day_idle;
+  ThemeChanger(){
     this._themeData = themeLight;
   }
+  getSwitcherAnim() => this.switcherAnim ;
 
-  toggleTheme() {
-    if (this._themeData == themeLight)
-      this._themeData = themeDark;
-    else
+  toggleTheme() async{
+    if (this._themeData == themeLight){
+      this.switcherAnim = switcherState.switch_night ;
+      notifyListeners() ;
+      await Future.delayed(Duration(milliseconds: 300));
+      this.switcherAnim = switcherState.night_idle ;
+      this._themeData = themeDark;}
+    else{
+      this.switcherAnim = switcherState.switch_day ;
+      notifyListeners() ;
+      await Future.delayed(Duration(milliseconds: 300));
+      this.switcherAnim = switcherState.day_idle ;
       this._themeData = themeLight;
+    }
     notifyListeners();
   }
 
   getTheme() => _themeData;
 
-  setTheme(ThemeData theme) {
-    _themeData = theme;
-    notifyListeners();
-  }
 }

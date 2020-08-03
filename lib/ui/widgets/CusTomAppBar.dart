@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../shared/text_styles.dart' as style;
+
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   Size size;
@@ -8,20 +10,32 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     size = MediaQuery.of(context).size;
     return PreferredSize(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.0,vertical: 18.0),
+        padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 18.0),
         child: SafeArea(
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              Icon(Icons.favorite_border,size: 32),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/shoppingCart');
+                  },
+                  child: Icon(Icons.shopping_cart, size: 32)),
               Expanded(
                 child: Text(
                   "Restaurant App ui",
-                  style: Theme.of(context).appBarTheme.textTheme.title,
+                  style: style.appBarTextTheme,
                   textAlign: TextAlign.center,
                 ),
               ),
-              Icon(Icons.notifications_none,size: 32,),
+              GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, '/notification') ;
+                },
+                child: Icon(
+                  Icons.notifications_none,
+                  size: 32,
+                ),
+              ),
             ],
           ),
         ),
@@ -30,6 +44,5 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   }
 
   @override
-
   Size get preferredSize => Size.fromHeight(90);
 }

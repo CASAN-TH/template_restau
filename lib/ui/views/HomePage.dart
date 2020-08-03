@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.3),
             child: Center(
               child: Image.asset(
-                "assets/logo.png",
+                "assets/icons&splashs/Asset 51.png",
                 color: Colors.white,
                 height: MediaQuery.of(context).size.height * 0.1,
                 width: MediaQuery.of(context).size.width * 0.2,

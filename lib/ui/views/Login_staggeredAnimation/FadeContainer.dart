@@ -16,13 +16,13 @@ class _FadeBoxState extends State<FadeBox> with TickerProviderStateMixin {
   void initState() {
 
     _screenController = AnimationController(
-        duration: Duration(milliseconds: 2500), vsync: this)..forward();
+        duration: Duration(milliseconds: 2000), vsync: this);
     fadeScreenAnimation = ColorTween(
       begin: widget.primaryColor,
       end: widget.primaryColor.withOpacity(0),
     ).animate(CurvedAnimation(
       parent: _screenController,
-      curve: Interval(0.2, 1.0,curve: Curves.easeOutQuart),
+      curve: Interval(0.0, 1.0,curve: Curves.easeOutQuart),
     ));
     _screenController.forward();
     super.initState();

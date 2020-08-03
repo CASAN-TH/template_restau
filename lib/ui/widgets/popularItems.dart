@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../shared/text_styles.dart' as style;
 import 'package:provider/provider.dart';
 import '../../core/Dish_list.dart';
-import 'package:smooth_star_rating/smooth_star_rating.dart' ;
 import './PopularItem.dart' ;
 
 class PopularItems extends StatelessWidget {
@@ -41,11 +40,14 @@ class PopularItems extends StatelessWidget {
                 (MediaQuery.of(context).size.height - kToolbarHeight - 24) / 2;
             final double itemWidth = MediaQuery.of(context).size.width / 1.7;
             return GridView.builder(
+              padding: EdgeInsets.only(bottom:32),
               physics: ScrollPhysics(),
               shrinkWrap: true,
               gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1 / 1.45,
+                childAspectRatio: 1 / 1.5,
+                crossAxisSpacing: 12,
+                mainAxisSpacing: 8
               ),
               itemCount: model.categories.length,
               itemBuilder: (context, index) {

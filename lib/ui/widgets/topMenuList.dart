@@ -5,6 +5,7 @@ import '../shared/text_styles.dart' as style;
 import '../../locator.dart';
 import 'package:provider/provider.dart';
 import '../../core/Dish_list.dart';
+import '../views/itemDetails.dart';
 
 class TopMenuList extends StatefulWidget {
   @override
@@ -27,22 +28,31 @@ class _TopMenuListState extends State<TopMenuList> {
 
     return Column(
       children: <Widget>[
-        AnimatedContainer(
-          width: MediaQuery.of(context).size.width *0.7,
-          height: MediaQuery.of(context).size.height *0.45 - top - 7 - 8,
-          duration: Duration(milliseconds: 700),
-          curve: Curves.easeOutQuint,
-          margin: EdgeInsets.only(top: top, bottom: 15, right: MediaQuery.of(context).size.width *0.1),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(data['img']),
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (_)=> ItemDetails(dish: data,))) ;
+          },
+          child: Hero(
+            transitionOnUserGestures: true,
+            tag:data['id'] ,
+            child: AnimatedContainer(
+              width: MediaQuery.of(context).size.width *0.7,
+              height: MediaQuery.of(context).size.height *0.45 - top - 7 - 8,
+              duration: Duration(milliseconds: 700),
+              curve: Curves.easeOutQuint,
+              margin: EdgeInsets.only(top: top, bottom: 15, right: MediaQuery.of(context).size.width *0.1),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(data['img']),
+                  ),
+
+                  boxShadow: [BoxShadow(color: Colors.black38, blurRadius: blur, offset: Offset(offset, offset))]
               ),
 
-              boxShadow: [BoxShadow(color: Colors.black38, blurRadius: blur, offset: Offset(offset, offset))]
+            ),
           ),
-
         ),
         Container(
           padding: EdgeInsets.only(right: MediaQuery.of(context).size.width *0.1),
