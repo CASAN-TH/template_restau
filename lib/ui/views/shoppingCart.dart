@@ -29,7 +29,6 @@ class _ShoppingCartState extends State<ShoppingCart> {
               Expanded(
                 child: Container(
                   height: 50,
-                  //padding: EdgeInsets.symmetric(vertical: 8,horizontal: 16),
                   child: TextField(
 
                     decoration: InputDecoration(
@@ -92,7 +91,9 @@ class _ShoppingCartState extends State<ShoppingCart> {
                     height: 65,
                     padding: const EdgeInsets.all(8.0),
                     child: RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/paymentPage') ;
+                      },
                       elevation: 0.5,
                       color: Theme.of(context).primaryColor,
                       child: Center(
@@ -153,7 +154,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                           padding: EdgeInsets.only(bottom: 15.0),
                           child: IconButton(
                               alignment: Alignment.topLeft,
-                              icon: Icon(Icons.arrow_back),
+                              icon: Icon(Icons.arrow_back_ios),
                               onPressed: () {
                                 Navigator.pop(context);
                               }),

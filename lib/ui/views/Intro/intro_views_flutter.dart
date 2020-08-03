@@ -237,7 +237,7 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter>
       backgroundColor: widget.background,
       body: Stack(
         children: <Widget>[
-          Page(
+          Page1(
             pageViewModel: pages[activePageIndex],
             percentVisible: 1.0,
             columnMainAxisAlignment: widget.columnMainAxisAlignment,
@@ -245,7 +245,7 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter>
           PageReveal(
             //next page reveal
             revealPercent: slidePercent,
-            child: Page(
+            child: Page1(
                 pageViewModel: pages[nextPageIndex],
                 percentVisible: slidePercent,
                 columnMainAxisAlignment: widget.columnMainAxisAlignment),

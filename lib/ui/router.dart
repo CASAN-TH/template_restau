@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:template_restau/ui/views/OtpPage.dart';
+import 'package:template_restau/ui/views/PhonenumberRegister.dart';
+import 'package:template_restau/ui/views/card_type.dart';
 import 'package:template_restau/ui/views/notificationPage.dart';
 import 'package:template_restau/ui/views/onBording.dart';
 import './views/loginScreen.dart';
@@ -9,6 +12,10 @@ import './views/shoppingCart.dart';
 import './views/splashScreen.dart';
 import './views/ProfilePage.dart';
 import './views/favoritePage.dart';
+import './views/PaymentPage.dart';
+import 'views/walletpage.dart';
+import 'views/card_create.dart';
+import 'views/card_wallet.dart';
 
 
 
@@ -18,7 +25,21 @@ class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => HomePage());
+      return MaterialPageRoute(builder: (_) => HomePage());
+      case '/phoneNumberRegister':
+        return MaterialPageRoute(builder: (_) => PhoneNumberRegister());
+      case '/otpPage':
+        return MaterialPageRoute(builder: (_) => OtpPage());
+      case '/cardList':
+        return MaterialPageRoute(builder: (_) => WalletPage());
+      case '/cardCreate':
+        return MaterialPageRoute(builder: (_) => CardCreate());
+      case '/cardWallet':
+        return MaterialPageRoute(builder: (_) => CardWallet());
+      case '/cardType':
+        return MaterialPageRoute(builder: (_) => CardType());
+      case '/paymentPage':
+        return MaterialPageRoute(builder: (_) => PaymentPage());
       case '/splashScreen':
         return MaterialPageRoute(builder: (_) => SplashScreen());
       case '/profilePage':

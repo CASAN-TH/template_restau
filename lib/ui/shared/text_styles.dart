@@ -25,3 +25,5 @@ const textTheme = TextStyle(
     fontSize: 16,
     letterSpacing: 1.1,
     fontFamily: "arial");
+const appBarTextTheme = TextStyle(
+    fontSize: 18.0, fontWeight: FontWeight.w600) ;

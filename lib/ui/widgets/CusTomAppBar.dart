@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../shared/text_styles.dart' as style;
 
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
@@ -22,7 +23,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
               Expanded(
                 child: Text(
                   "Restaurant App ui",
-                  style: Theme.of(context).appBarTheme.textTheme.title,
+                  style: style.appBarTextTheme,
                   textAlign: TextAlign.center,
                 ),
               ),

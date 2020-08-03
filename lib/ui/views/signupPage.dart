@@ -232,7 +232,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                       color: Theme.of(context).primaryColor,
-                      onPressed: () {}
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/phoneNumberRegister') ;
+                      }
                       ,
                       child: Container(
                         padding: const EdgeInsets.symmetric(

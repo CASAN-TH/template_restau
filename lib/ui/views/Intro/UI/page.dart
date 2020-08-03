@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../Models/page_view_model.dart';
 
 /// This is the class which contains the Page UI.
-class Page extends StatelessWidget {
+class Page1 extends StatelessWidget {
   ///page details
   final PageViewModel pageViewModel;
 
@@ -13,7 +13,7 @@ class Page extends StatelessWidget {
   final MainAxisAlignment columnMainAxisAlignment;
 
   //Constructor
-  Page({
+  Page1({
     this.pageViewModel,
     this.percentVisible = 1.0,
     this.columnMainAxisAlignment = MainAxisAlignment.spaceAround,
@@ -46,7 +46,7 @@ class Page extends StatelessWidget {
       children: <Widget>[
         Flexible(
           flex: 1,
-          child:  _TitlePageTransform(
+          child: _TitlePageTransform(
             percentVisible: percentVisible,
             pageViewModel: pageViewModel,
           ),
@@ -182,20 +182,19 @@ class _TitlePageTransform extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
-      child:  Row(
+    return SafeArea(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
             width: MediaQuery.of(context).size.width * 0.9,
-            child:           FittedBox(
+            child: FittedBox(
               fit: BoxFit.scaleDown,
               child: DefaultTextStyle.merge(
                 style: pageViewModel.titleTextStyle,
                 child: pageViewModel.title,
               ),
-            )
-            ,
+            ),
           )
         ],
       ),

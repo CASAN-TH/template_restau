@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../shared/text_styles.dart' as style;
 
 class TitleAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
@@ -22,14 +23,14 @@ class TitleAppBar extends StatelessWidget with PreferredSizeWidget {
                   Navigator.pop(context) ;
                 },
                 child: Icon(
-                  Icons.arrow_back,
-                  size: 32,
+                  Icons.arrow_back_ios,
+                  size: 18,
                 ),
               ),
               Expanded(
                 child: Text(
                   this.title,
-                  style: Theme.of(context).appBarTheme.textTheme.title,
+                  style: style.appBarTextTheme,
                   textAlign: TextAlign.center,
                 ),
               ),

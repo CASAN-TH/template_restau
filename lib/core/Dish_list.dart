@@ -6,12 +6,12 @@ class FoodList extends ChangeNotifier {
     {
       "id": "1",
       "type": "Pizza",
-      "img": "assets/food1.jpeg",
+      "img": "assets/food1.jpg",
       "cuisine": "Italien",
       "rating" : 5.0,
       "liked" : true,
       "price" : 248,
-      "imgList": ["assets/food1.jpeg", "assets/food2.jpg", "assets/food3.jpg"]
+      "imgList": ["assets/food1.jpg", "assets/food2.jpg", "assets/food3.jpg"]
     },
     {
       "id": "2",
@@ -163,7 +163,7 @@ class FoodList extends ChangeNotifier {
     {
       "id": "1",
       "cuisine": "Chinese",
-      "img": "assets/food1.jpeg",
+      "img": "assets/food1.jpg",
     },
     {
       "id": "2",
